@@ -105,23 +105,23 @@ Our proposition for the optimal policy is as follows:
     We can order the elements of $D_t$ as $m_1 > m_2 > \dots > m_{|D_t|}$, where $\max\{D_t\} = m_1$.
     Note that the total number of ways we can discard $x_t$ cards from a deck of size $|D_t|$ is given by
     \begin{equation}
-        \binom{|D_t|}{x_t}.
+        \binom{|D_t|-1}{x_t}.
     \end{equation}
     We are interested in the number of outcomes for which $\max\{D_t\}=m_j$. These are all events where all cards $m_i>m_j$ are discarded, and $m_j$ is not discarded. The number of events such that these conditions hold is given by
     \begin{equation}
-        \binom{|D_t|-j}{x_t-(j-1)},
+        \binom{|D_t-1|-j}{x_t-(j-1)},
     \end{equation}
     since we can randomize over $x_t-(j-1)$ cards (the cards smaller than $m_j$), and can draw them from $|D_t|-j$ cards. It follows that:
     \begin{align}
-         & \mathbb{P}\Big(\max\{D_{T+1}\}  = m_j \big| \text{Pick } x_t\Big) = \mathbb{P}_j  = \frac{\binom{|D_t|}{x_t}}{\binom{|D_t|-j}{x_t-(j-1)}} .
+         & \mathbb{P}\Big(\max\{D_{T+1}\}  = m_j \big| \text{Pick } x_t\Big) = \mathbb{P}_j  = \frac{\binom{|D_t|-1}{x_t}}{\binom{|D_t|-j-1}{x_t-(j-1)}} .
     \end{align}
     We can then expand the expected maximum after picking $x_t$ as:
     \begin{align}
-        \mathbb{E}\big[\max\{D_{t+1}\} \ | \text{Pick}, x_t\big] = \sum^{x_t}_{j=1} \mathbb{P}_j\cdot m_j = \sum^{x_t}_{j=1} \frac{\binom{|D_t|}{x_t}}{\binom{|D_t|-j}{x_t-(j-1)}}  m_j.
+        \mathbb{E}\big[\max\{D_{t+1}\} \ | \text{Pick}, x_t\big] = \sum^{x_t}_{j=1} \mathbb{P}_j\cdot m_j = \sum^{x_t}_{j=1} \frac{\binom{|D_t|-1}{x_t}}{\binom{|D_t|-j-1}{x_t-(j-1)}}  m_j.
     \end{align}
     It follows that the decision makes should select action \textit{Pick} iff:
     \begin{equation}
-        x_t+ \sum^{x_t}_{j=1} \frac{\binom{|D_t|}{x_t}}{\binom{|D_t|-j}{x_t-(j-1)}}  m_j > m_1.
+        x_t+ \sum^{x_t}_{j=1} \frac{\binom{|D_t|-1}{x_t}}{\binom{|D_t|-j-1}{x_t-(j-1)}}  m_j > m_1.
     \end{equation}
     \textbf{TO BE CONTINUED}
 

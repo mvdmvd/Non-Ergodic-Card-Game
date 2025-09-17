@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.7)  17 SEP 2025 15:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.7)  17 SEP 2025 15:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -280,6 +280,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--78
 
  []
 
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:103: Missing $ inserted.
+<inserted text> 
+                $
+l.103 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:103: Missing } inserted.
+<inserted text> 
+                }
+l.103 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:103: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.103 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:103: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.103 
+      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:104: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.104     \end{equation}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:104: You can't use `\eqno' in vertical mode.
+\veqno ->\@kernel@eqno 
+                       \aftergroup \ignorespaces 
+l.104     \end{equation}
+                        
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:104: Missing $ inserted.
+<inserted text> 
+                $
+l.104     \end{equation}
+                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex:104: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.104     \end{equation}
+                        
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
 
 
 [2] (./draft.aux)
@@ -291,13 +371,13 @@ L3 programming layer <2025-01-18>
 Here is how much of TeX's memory you used:
  3641 strings out of 473190
  53444 string characters out of 5715801
- 454637 words of memory out of 5000000
+ 454635 words of memory out of 5000000
  26870 multiletter control sequences out of 15000+600000
  567437 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,9n,65p,417b,218s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on draft.pdf (2 pages, 193201 bytes).
+Output written on draft.pdf (2 pages, 193525 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

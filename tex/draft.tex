@@ -100,8 +100,17 @@ Our proposition for the optimal policy is as follows:
     \end{equation}
     We can rewrite the RHS as:
     \begin{equation}
-
+        r(x_t,a) + \mathbb{E}\Big[V^{\pi^s}(x_{t+1}, D_{t+1})\Big] = r(x_t,a) + \mathbb{E}\big[\max\{D_{t+1}\}\big].
     \end{equation}
+    Where:
+    \begin{align}
+         & \mathbb{P}\Big(\max\{D_{t+1}\} = \max\{D_t\}\Big) = \frac{|D_t|-1}{|D_t|} \cdot \frac{|D_t|-2}{|D_t-1}\cdot \  \dots \ \cdot \frac{|D_t|-x_t}{|D_t-x_t+1} \cdot \max\{D_t\}, \\
+         & \mathbb{P}\Big(\max\{D_{t+1}\}= \max\big\{D_t \setminus \max\{D_t\}\big\}\Big)\end{align}
+
+
+    \begin{align}
+        \mathbb{E}\big[\max\{D_{t+1}\}\big] =
+    \end{align}
 \end{proof}
 
 

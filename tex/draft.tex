@@ -92,11 +92,15 @@ Our proposition for the optimal policy is as follows:
     \end{equation}
     It follows that if we can show that
     \begin{equation}
-        \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})\Big]\Big\} = \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V^{\pi^s}(x_{t+1}, D_{t+1})\Big]\Big\},
+        \arg \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})\Big]\Big\} = \arg \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V^{\pi^s}(x_{t+1}, D_{t+1})\Big]\Big\},
     \end{equation}
     then  we can be sure that our policy is the optimal policy:
     \begin{equation}
         \pi^m(x_t, D_t) = \pi^*(x_t, D_t).
+    \end{equation}
+    We can rewrite the RHS as:
+    \begin{equation}
+
     \end{equation}
 \end{proof}
 

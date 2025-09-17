@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{array}
+\bibliographystyle{abbrv}
+\usepackage{bibentry}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{geometry} 
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\title{Optimal Play for Gregoris' Card Game}
+\author{Mees van Dartel}
+
+
+\begin{document}
+\maketitle
+\section{Problem formulation}
+Consider the following card game \footnote{Of course single player games are not games in the formal sense.}. A decision maker faces a deck $\mathcal{D} = \{x_1, x_2, \dots, x_n\}$ containing $n$ cards, labeled $i \in \{1, 2, \dots, n\}$.
+The value of card $x_i=i$. At every time step, the decision maker draws from the deck with uniform probability without replacement.
+Denote by $D_t$ the set of remaining cards in the deck at time $t$. The probability of drawing a card $x_i$, conditional on the remaining cards $D_t$, is given by the following PMF:
+\begin{equation}
+    \mathbb{P}\Big(X=x_i \ \big| \  D_t\Big) =\begin{cases}
+        \frac{1}{|D_t|} & \text{for } x_i \in D_t \\
+        0               & \text{else}
+    \end{cases}.
+\end{equation}
+Let $x_t$ be the card drawn at time $t$.
+The decision maker sequentially draws cards, and faces the following choice. She can \textit{pick} the drawn card $x_t$, and receive reward $r_t=x_t$. However, she must thereafter draw and discard $x_t$ cards from the deck, such that:
+\begin{equation}
+    D_{t+1} \mid \text{Pick} = D_{t}  \setminus \{y_1, y_2, \ldots, y_{x_t}, x_t\},
+\end{equation}
+where $y_j$ is drawn uniformly at random without replacement $y_j \sim U(D_t \setminus \{y_1, \dots, y_{j-1}\})$. Alternatively, she can choose to \textit{skip} the card, whereafter she receives reward $r_t=0$, and can draw a new card:
+We then have:
+\begin{equation}
+    D_{t+1} \mid \text{Skip} = D_{t} \setminus \{x_t\}.
+\end{equation}
+The decision maker's information set at time $t$ is given by $\Omega_t = \{\mathcal{D}, D_t\}$, such that she can observe which cards are left in the deck. At $t=0$, we have $ D_0 = \mathcal{D}$. The decision maker's objective is to maximize her total expected sum of rewards:
+\begin{equation}
+    R=\mathbb{E}\left[\sum_{t=0}^\infty r_t\right].
+\end{equation}
+Whenever a time step $\tau$ occurs where there are no cards remaining, such that $D_\tau = \emptyset$, all subsequent rewards are $0$, i.e., $r_t=0$ for all $t \geq \tau$. $D_\tau$ is an absorbing state.
+$D_\tau$ eventually occurs with $\mathbb{P}=1$, at the latest at $t=n$, if the decision maker never picks any card. This is clearly suboptimal, as her total sum of rewards will be $R=0$. She can easily improve upon this with the following policy:
+\begin{equation}
+    \pi(x_t, D_t) = \begin{cases}
+        \text{Pick} & \text{if } x_t = n    \\
+        \text{Skip} & \text{if } x_t \neq n
+    \end{cases},
+\end{equation}
+such that her total sum of rewards is $R=n$.\\
+
+\textbf{THIS IS A NON-HOMOGENOUS, NON-ERGORIC MARKOV CHAIN? WHAT IS THE STRUCTURE, WHAT DOES THIS SAY ABOUT THE OPTIMAL POLICY?}.
+
+\section{Optimal play}
+Consider the following policy:
+\begin{equation}
+    \pi^s(x_t, D_t) = \begin{cases}
+        \text{Pick} & \text{if } x_t = \max\{D_t\}    \\
+        \text{Skip} & \text{if } x_t \neq \max\{D_t\}
+    \end{cases},
+\end{equation}
+The policy $\pi^s$ simply searches for the largest card remaining in the deck and ends the game. Once this policy chooses \textit{pick}, we enter the absorbing state $D_\tau$, ending the game. For any state $D_t$, the value of this policy is given by:
+\begin{equation}
+    V^{\pi^s}(x_t, D_t)= \sum^\infty_t r_t = \max\{D_t\},
+\end{equation}
+We can think of an example of a deck $D^s$ for which the following policy is optimal, namely a deck for which, for every $x_i \in D^s, x_i > |D^s|$. Picking any card from $D^s$ will generate the absorbing state $D_\tau$, ending the game, so clearly it is optimal to search for the largest card in the deck and end the game.\\
+
+Our proposition for the optimal policy is as follows:
+\begin{proposition}
+    The optimal policy for Gregoris' card game is given by:
+
+    \begin{equation}
+        \pi^m(x_t, D_t) = \arg\max \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V^{\pi^s}(x_{t+1}, D_{t+1})\Big]\Big\}.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    The Bellman equation for the card game is given by:
+    \begin{equation}
+        V(x_t, D_t) =  \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})\Big]\Big\}.
+    \end{equation}
+    It follows that if we can show that
+    \begin{equation}
+        \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})\Big]\Big\} = \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V^{\pi^s}(x_{t+1}, D_{t+1})\Big]\Big\},
+    \end{equation}
+    then  we can be sure that our policy is the optimal policy:
+    \begin{equation}
+        \pi^m(x_t, D_t) = \pi^*(x_t, D_t).
+    \end{equation}
+\end{proof}
+
+
+\end{document}

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1758118650.36229 "/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex" "draft.pdf" "draft" 1758118650.82758 0
-  "/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex" 1758118650.2742 5842 bcf838153aa139d976f111b589588b2d ""
+["pdflatex"] 1758120354.88336 "/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex" "draft.pdf" "draft" 1758120355.32138 0
+  "/Users/meesvandartel/Desktop/Simple Card Game/Optimal-Gregoris--Card-Game/tex/draft.tex" 1758120354.79607 6858 9a5f5779908476759dccbec43aec6449 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -74,8 +74,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1741450490 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1749311043 3345729 ed0d0b65e42ea3f626a11a32a1c64224 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "draft.aux" 1758118650.76309 256 3b82633847a92087bc357c69f150b82c "pdflatex"
-  "draft.tex" 1758118650.2742 5842 bcf838153aa139d976f111b589588b2d ""
+  "draft.aux" 1758120355.26479 256 3b82633847a92087bc357c69f150b82c "pdflatex"
+  "draft.tex" 1758120354.79607 6858 9a5f5779908476759dccbec43aec6449 ""
   (generated)
   "draft.aux"
   "draft.log"

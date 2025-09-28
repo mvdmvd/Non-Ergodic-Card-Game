@@ -88,7 +88,7 @@ Our proposition for the optimal policy is as follows:
 \begin{proof}
     The Bellman equation for the card game is given by:
     \begin{equation}
-        V(x_t, D_t) =  \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})\Big]\Big\}.
+        V(x_t, D_t) =  \max_{a \in \{\text{Pick, Skip}\}}\Big\{r(x_t,a) + \mathbb{E}\Big[V(x_{t+1}, D_{t+1}) \ | a \Big]\Big\}.
     \end{equation}
     It follows that if we can show that
     \begin{equation}
@@ -117,17 +117,46 @@ Our proposition for the optimal policy is as follows:
     \end{align}
     We can then expand the expected maximum after picking $x_t$ as:
     \begin{align}
-        \mathbb{E}\big[\max\{D_{t+1}\} \ | \text{Pick}, x_t\big] = \sum^{x_t}_{j=1} \mathbb{P}_j\cdot m_j = \sum^{x_t}_{j=1} \frac{\binom{|D_t|-1}{x_t}}{\binom{|D_t|-j-1}{x_t-(j-1)}}  m_j.
+        \mathbb{E}\big[\max\{D_{t+1}\} \ | \text{Pick} x_t\big] = \sum^{x_t}_{j=1} \mathbb{P}_j\cdot m_j = \sum^{x_t}_{j=1} \frac{\binom{|D_t|-1}{x_t}}{\binom{|D_t|-j-1}{x_t-(j-1)}}  m_j.
     \end{align}
     It follows that the decision makes should select action \textit{Pick} iff:
     \begin{equation}
         x_t+ \sum^{x_t}_{j=1} \frac{\binom{|D_t|-1}{x_t}}{\binom{|D_t|-j-1}{x_t-(j-1)}}  m_j > m_1.
     \end{equation}
-    \textbf{TO BE CONTINUED}
+    \textbf{WORK IN PROGRESS }$\arrowvert$\\
+
+    We need to show that
+    \begin{align}
+         & x_t + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Pick}   \Big] \geq \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Skip}   \Big] \implies x_t+  \mathbb{E}\big[\max\{D_{t+1}\} | \text{Pick} \big] \geq \max\{D_t\}
+    \end{align}
+    and
+    \begin{align}
+         & x_t + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Pick}   \Big] \leq \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Skip}   \Big] \implies x_t+  \mathbb{E}\big[\max\{D_{t+1}\} | \text{Pick} \big]    \leq \max\{D_t\}   .
+    \end{align}
 
 
+    \begin{lemma}
+        Under the optimal policy, any game ending card should be the maximum card left in the deck.
+    \end{lemma}
+    Consider the first proposition, where the optimal policy would prescribe to Pick. We then have:
+    \begin{equation}
+        x_t + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Pick}   \Big] \geq \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Skip}   \Big]    \end{equation}
 
+    We know that, by the principle of optimality, the following two inequalities must hold:
+    \begin{align}
+         & \mathbb{E}\big[\max\{D_{t+1}\} | \text{Pick} \big] \leq \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Pick}   \Big], \\
+         & \max\{D_t\}  \leq \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Skip}   \Big],
+    \end{align}
+    such that we have
+    \begin{equation}
+        x_t + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Pick}   \Big] \geq \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Skip}   \Big] \geq \max\{D_t\} .
+    \end{equation}
+    In the case where $V_\pi^m$ and $V_\pi^*$ are the same, they trivially prescribe the same actions. We are therefore only interested in the case where inequalities are strict:
+    \begin{equation}
+        x_t + \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Pick}   \Big] \geq \mathbb{E}\Big[V(x_{t+1}, D_{t+1})  |   \text{Skip}   \Big] > \max\{D_t\} .
+    \end{equation}
 
+    \textbf{UNFINISHED}.
 
 \end{proof}
 
